@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-ARG N8N_VERSION=1.56.1
+ARG N8N_VERSION=1.85.4
 
 RUN apk add --update graphicsmagick tzdata
 
@@ -13,7 +13,5 @@ RUN apk --update add --virtual build-dependencies python3 build-base && \
 WORKDIR /data
 
 EXPOSE $PORT
-
-ENV N8N_USER_ID=root
 
 CMD export N8N_PORT=$PORT && n8n start
