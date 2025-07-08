@@ -1,6 +1,6 @@
 FROM node:18-alpine
 
-ARG N8N_VERSION=1.85.4
+ARG N8N_VERSION=1.56.1
 
 RUN apk add --update graphicsmagick tzdata
 
@@ -16,4 +16,4 @@ EXPOSE $PORT
 
 ENV N8N_USER_ID=root
 
-CMD ["n8n", "start"]
+CMD export N8N_PORT=$PORT && n8n start
